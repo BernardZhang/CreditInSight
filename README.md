@@ -1,0 +1,4 @@
+CreditInSight
+=============
+
+Credit management system
