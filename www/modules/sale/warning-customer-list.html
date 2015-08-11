@@ -1,0 +1,24 @@
+<div data-role="page" id="warning_customer_list">
+  <div class="common-page">
+    <div class="header">
+      <h1 data-translation="Warning Customer List"></h1>
+      <a class="btn left-btn back" href="index.html" data-transition="slide" data-direction="reverse" data-translation="Back"></a>
+    </div>
+    
+    <div id="iscroll" class="iscroll">
+      <div class="content">
+        <div data-bind="template: {name: 'warning-customer-list-template', data: warningCustomerList, afterRender: afterRender}"></div>
+      </div>
+    </div>
+    
+   <div class="footer">
+      <ul class="status">
+        <li data-bind="css: {'active': footerTabs.listTab() === 'warning'}">
+          <span class="warning-list" data-bind="click: footerTabs.showWarningList" data-translation="Warning List"></span>
+        </li>
+        <li data-bind="css: {'active': footerTabs.listTab() === 'processed'}">
+          <span class="processed" data-bind="click: footerTabs.showProcessedList" data-translation="Processed"></span>
+        </li>
+      </ul> 
+  </div>
+</div>

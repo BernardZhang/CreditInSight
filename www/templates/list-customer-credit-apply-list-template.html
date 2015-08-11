@@ -1,0 +1,20 @@
+<ul class="list multiple" data-bind="foreach: $data, visible: $data.length > 0" >
+  <li data-bind="style: {'font-weight': ('true' === unread || true === unread) ? 'bolder' : 'normal'}">
+    <a class="list-row" data-transition="slide" data-bind="attr: {href: 'customer-credit-apply-detail.html?applyId=' + id}">
+    <span class="list-left">
+      <i data-bind="attr: {class: status}"></i>
+      <em>
+        <sup><span data-translation="Apply Amount"></span>:<span data-bind="text: sap.creditManagement.convertNumberWithComma(amount)"></span><span data-bind="attr: {'data-translation': unit, text: unit}"></span></sup>
+        <sub data-bind="text: date"></sub>
+      </em>
+    </span>
+    <span class="list-right one-row">
+      <i class="arrow right"></i>
+      <em>
+        <sup data-bind="attr: {'data-translation': 'Priority ' +priority}, text: priority"></sup>
+      </em>
+    </span>
+    </a>
+  </li>
+</ul>
+  

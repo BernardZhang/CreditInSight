@@ -1,0 +1,23 @@
+<h2>
+  <span data-translation="Collection Record"></span>
+</h2>
+
+<ul class="list multiple" data-bind="foreach: $data, visible: $data.length > 0">
+  <li>
+    <span class="list-row">
+      <span class="list-left">
+        <em>
+          <sup><span data-translation="Collection Date"></span>: <span data-bind="text: dunDate"></span></sup>
+          <sub><span data-translation="Promise Date"></span>: <span data-bind="text: promisedDate"></span></sub>
+        </em>
+      </span>
+      <span class="list-right">
+        <em>
+          <sup><span data-translation="Collector"></span>: <span data-bind="text: collector"></span></sup>
+          <sub><span data-translation="Promise Amount"></span>: <span data-bind="text: sap.creditManagement.convertNumberWithComma(promisedAmount)"></span><span data-bind="attr: {'data-translation': unit}, text: unit"></span></sub>
+        </em>
+      </span>
+    </span>
+  </li>
+</ul>
+

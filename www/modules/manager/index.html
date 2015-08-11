@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+<title>Manager Page</title>
+<link rel="stylesheet" href="../../js/lib/jquery.mobile-1.1.1/jquery.mobile-1.1.1.min.css" />
+<link rel="stylesheet" href="../../css/library.css" />
+    
+  <script src="../../js/lib/cordova-2.0.0.js"></script>
+  <script src="../../js/lib/jquery.js"></script>
+  <script src="../../js/lib/iscroll.js"></script>
+  
+  <script src="../../js/lib/jquery.mobile-1.1.1/jquery.mobile-1.1.1.min.js"></script>
+  <script src="../../js/lib/knockout.js"></script>
+  <script src="../../js/lib/koExternalTemplateEngine.js"></script> 
+  
+  <script src="../../js/custom/common.js"></script>
+  <script src="../../js/custom/db.extend.js"></script>
+  <script src="../../js/custom/PGPlugin.js"></script>
+  <script src="../../js/custom/jqm.conf.js"></script>
+  <script src="../../js/custom/init.js"></script>
+  <script src="../../js/custom/template.js"></script>
+  <script src="../../js/custom/radarChart.js"></script>
+  <script src="../../js/custom/lineChart.js"></script>
+  <script src="js/manager.js"></script>
+
+<style>
+</style>
+</head>
+<body>
+<div data-role="page" id="common_homepage">
+  <div class="common-page">
+    <div class="header">
+      <h1><span data-translation="Credit Management System"></span>-<span class="credit-role" data-translation="Manager"></span></h1>
+      <a class="btn right-btn logout" data-transition="slide" data-ajax="false" href="../../index.html"></a>
+    </div>
+    
+    <div id="content" class="iscroll">
+      <div class="content">
+        <ul class="grid">
+          <li><a data-transition="slide" href="#"><span id="credit-limits"></span><p data-translation="Credit Limit Check"></p></a></li>
+          <li><a data-transition="slide" href="#"><span id="block"></span><p data-translation="Order Status Check"></p></a></li>
+          <li><a data-transition="slide" href="credit-limit-approval-list.html"><span id="apply"></span><p data-translation="Credit Limit Approve"></p></a><div class="prompt" data-bind="style: {display: count['applicationApprovel'] > 0 ? 'block' : 'none'}, text: count['applicationApprovel']"></div></li>
+          <li><a data-transition="slide" href="warning-customer-list.html"><span id="risk-monitor"></span><p data-translation="Risk Monitor"></p></a><div class="prompt" data-bind="style: {display: count['warning'] > 0 ? 'block' : 'none'}, text: count['warning']"></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

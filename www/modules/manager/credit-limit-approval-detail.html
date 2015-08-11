@@ -1,0 +1,26 @@
+<div data-role="page" id="credit_limit_apply_detail">
+  <div class="common-page">
+  	<div class="header">
+  	  <h1 data-bind="style: {display: applicationInfo.status == 'process' ? 'block' : 'none'}" data-translation="Apply Detail"></h1>
+  	  <h1 data-bind="style: {display: applicationInfo.status != 'process' ? 'block' : 'none'}" data-translation="Credit Apply Result"></h1>
+  	  <a class="btn left-btn back" href="#" data-rel="back" data-translation="Back"></a>
+  	</div>
+    
+    <div id="iscroll" class="iscroll">
+    	<div class="content">
+    	  <div data-bind="template: {name: 'manager-credit-limit-apply-detail-template', afterRender: afterRender}"></div>
+    	</div>
+  	</div>
+  	
+  	<div class="footer" style="display: none" data-bind="visible: applicationInfo.status == 'process'">
+      <ul class="action">
+        <li>
+          <span class="btn green" data-bind="click: onSubmitApply" data-translation="Submit"></span>
+        </li>
+        <li>
+          <span class="btn red" data-bind="click: onRejectApply" data-translation="Reject"></span>
+        </li>
+      </ul>
+    </div>
+	</div>
+</div>

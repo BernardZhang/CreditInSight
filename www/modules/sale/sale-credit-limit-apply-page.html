@@ -1,0 +1,21 @@
+<div data-role="page" id="sale_credit_limit_apply_page">
+  <div class="common-page">
+    <div class="header">
+      <h1 data-translation="Credit Application"></h1>
+      <a class="btn left-btn back" href="#" data-rel="back" data-translation="Back"></a>
+    </div>
+    
+    <div id="iscroll" class="iscroll">
+      <div class="content">
+        <div data-bind="template: {name: 'diagram-creditUsage-template', data: usageDiagramData, afterRender: afterRender}"></div>
+        <div data-bind="template: {name: 'sale-credit-apply-page-template', afterRender: afterRender}"></div> 
+      </div>
+    </div>
+    
+    <div class="footer">
+      <ul class="action">
+        <li><span><button class="btn green" data-role="none" data-translation="Submit" data-bind="click: onSubmitApply"></button></span></li>
+      </ul>
+    </div>
+  </div>
+</div>

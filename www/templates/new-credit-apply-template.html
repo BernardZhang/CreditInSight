@@ -1,0 +1,37 @@
+<div>
+  <h2 data-translation="Apply Info"></h2>
+  <ul class="list simple">
+    <li>
+      <span class="list-row">
+        <span class="list-left"><em><sup><span data-translation="Urgency Degree"></span><span>:</span></sup></em></span>
+        <span class="list-right"><em><sup>
+          <span class="gray-a float-a">
+            <select id="credit_apply_priority" name="credit_apply_priority" value="high">
+              <option value="high" data-translation="Priority high"></option>
+              <option value="normal" data-translation="Priority normal"></option>
+              <option value="low" data-translation="Priority low"></option>
+            </select>
+          </span>
+      </sup></em></span>
+      </span>
+    </li>
+    
+    <li>
+      <span class="list-row">
+        <span class="list-left"><em><sup><span data-translation="Apply Amount"></span><span>:</span></sup></em></span>
+        <span class="list-right"><em><sup>
+          <span>
+            <input id="credit_apply_amount" value="2000" type="number" required="required"/>
+            <span id="currency_unit" data-bind="attr: {'data-translation': unit, 'data-unit': unit, text: unit}"></span>
+          </span>
+      </sup></em></span>
+      </span>
+    </li>
+  </ul>
+  
+
+  <h2 data-translation="Apply Reason"></h2>
+  <div class="textarea-box">
+    <textarea class="textarea" id="credit_apply_reason" name="credit_apply_reason" data-bind="attr: {placeholder: sap.creditManagement.translate('Please input apply reason')}"></textarea>
+  </div>
+</div>

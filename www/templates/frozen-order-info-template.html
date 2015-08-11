@@ -1,0 +1,46 @@
+<h2 data-translation="Order Info"></h2>
+<ul class="list simple">
+  <li>
+    <span class="list-row">
+      <span class="list-left" data-translation="Order Date"></span>
+      <span class="list-right" data-bind="text: date"></span>
+    </span>
+  </li>
+  <li>
+    <span class="list-row">
+      <span class="list-left" data-translation="Frozen Order Id"></span>
+      <span class="list-right" data-bind="text: displayId"></span>
+    </span>
+  </li>
+  <li>
+    <span class="list-row">
+      <span class="list-left" data-translation="Order Amount"></span>
+       <span class="list-right">
+         <span data-bind="text: amount"></span> <span data-bind="attr: {'data-translation': unit}"></span>
+      </span>
+    </span>
+  </li>
+  <li>
+    <span class="list-row">
+      <span class="list-left" data-translation="Expected Revenue"></span>
+      <span class="list-right">
+         <span data-bind="text: expectedProfit"></span> <span data-bind="attr: {'data-translation': unit}"></span>
+      </span>
+    </span>
+  </li>
+  <li>
+    <a class="list-row" data-bind="attr: {href: 'sale-order-product-list.html?orderId='+ id + '&status='+status}" data-transition="slide">
+      <span class="list-left" data-translation="Order Line"></span>
+      <span class="list-right one-row">
+        <i class="arrow right"></i>
+      </span>
+    </a>
+  </li>
+  <li>
+    <span class="list-row">
+      <span class="list-left" data-translation="Urgency Degree"></span>
+      <span class="list-right" data-bind="attr: {'data-translation': 'Priority ' +priority}, text: priority"></span>
+    </span>
+  </li>
+</ul>
+

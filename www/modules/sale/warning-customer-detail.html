@@ -1,0 +1,30 @@
+<div data-role="page" id="warning_customer_detail">
+  <div class="common-page">
+    <div class="header">
+      <h1 data-translation="Warning Detail"></h1>
+      <a class="btn left-btn back" href="#" data-rel="back" data-translation="Back"></a>
+    </div>
+    
+    <div id="iscroll" class="iscroll">
+      <div class="content">
+        <div data-bind="template: {name: 'warning-customer-info-template', data: basicInfo, afterRender: afterRender}"></div>
+        <h2 data-translation="Warning Information"></h2>
+        <div id="wrapper">
+          <div id="scroller" data-bind="template: {name: 'warning-diagram-template', data: warningSummary, afterRender: drawCharts}"></div>
+        </div>
+        
+        <div id="nav">
+          <ul id="indicator">
+            <li class="active"></li>
+            <!-- ko foreach: warningSummary -->
+            <!-- ko if: !$data.disable -->
+            <li></li>
+            <!-- /ko -->
+            <!-- /ko -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

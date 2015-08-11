@@ -1,0 +1,25 @@
+<div data-role="page" id="order_detail">
+  <div class="common-page">
+    <div class="header">
+      <a class="btn left-btn back" href="#" data-rel="back" data-translation="Back"></a>
+      <h1 data-translation="Collection Record"></h1>
+    </div>
+    
+    <div id="iscroll" class="iscroll">
+      <div class="content">
+        <div data-bind="template: {name: 'order-detail-template'}"></div>
+      </div>
+    </div>
+    
+    <div class="footer" data-bind="visible: 'unProcessed' === applicationStatus">
+      <ul class="action">
+        <li>
+          <a class="btn green" data-bind="attr: {href: 'sale-credit-limit-apply-page.html?applicationId='+params.applicationId+'&priority='+params.priority+'&amount='+params.amount+'&used='+params.creditUsageData.creditUsed+'&creditLimit='+params.creditUsageData.creditLimit+'&unit='+ params.unit}" data-translation="Apply" data-transition="slide"></a>
+        </li>
+        <li>
+          <span><button data-role="none" class="btn red" data-bind="click: onRejectApply" data-translation="Reject"></button></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

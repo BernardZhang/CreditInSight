@@ -1,0 +1,38 @@
+<h2>
+  <span data-translation="Order Info"></span>
+</h2>
+<ul class="list simple">
+  <li>
+    <span class="list-row">
+      <span class="list-left"><em><sup><span data-translation="Order Number"></span></sup></em></span>
+      <span class="list-right"><em><sup>
+        <span class="float-a gray-a" data-bind="text: serialNo"></span>
+    </sup></em></span>
+    </span>
+  </li>
+  <li>
+    <span class="list-row">
+      <span class="list-left"><em><sup><span data-translation="Order Amount"></span></sup></em></span>
+      <span class="list-right"><em><sup>
+        <span data-bind="text: sap.creditManagement.convertNumberWithComma(amount)"></span>
+        <span data-bind="attr: {'data-translation': unit}, text: unit"></span>
+    </sup></em></span>
+    </span>
+  </li>
+  <li>
+    <span class="list-row">
+      <span class="list-left"><em><sup><span data-translation="Order Status"></span></sup></em></span>
+      <span class="list-right"><em><sup>
+        <span class="float-a gray-a" data-bind="text: status"></span>
+    </sup></em></span>
+    </span>
+  </li>
+  <li>
+    <span class="list-row">
+      <span class="list-left"><em><sup><span data-translation="Order Date"></span></sup></em></span>
+      <span class="list-right"><em><sup>
+        <span class="float-a gray-a" data-bind="text: date"></span>
+    </sup></em></span>
+    </span>
+  </li>
+</ul>

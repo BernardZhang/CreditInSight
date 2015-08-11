@@ -1,0 +1,33 @@
+<div data-role="page" id="credit_change_check">
+  <div class="common-page">
+    <div class="header">
+      <h1 data-translation="Friendship Remind"></h1>
+      <a class="btn left-btn back" href="index.html" data-direction="reverse" data-transition="slide" data-translation="Back"></a>
+    </div>
+    
+    <div id="iscroll" class="iscroll">
+      <div class="content" data-bind="template: {afterRender: afterRender}">
+        <ul class="list multiple" data-bind="foreach: creditChangeList, visible: creditChangeList.length > 0">
+          <li>
+            <a class="list-row" data-transition="slide" data-bind="attr: {href: 'friendship-remind-detail.html?warningId='+warningId}">
+              <span class="list-left">
+                <i data-bind="attr: {class: level}"></i>
+                <em>
+                  <sup><span data-bind="attr: {'data-translation': action}, text: action"></span></sup>
+                  <sub data-bind="text: date"></sub>
+                </em>
+              </span>
+              <span class="list-right one-row">
+                <i class="arrow right"></i>
+                <em>
+                  <sup>
+                    <span data-bind="attr: {'data-translation': level}, text: level"></span>
+                  </sup>
+                </em>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>

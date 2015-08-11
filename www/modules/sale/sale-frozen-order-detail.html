@@ -1,0 +1,25 @@
+<div data-role="page" id="sale_frozen_order_detail">
+  <div class="common-page">
+    <div class="header">
+      <h1 data-bind="style: {display: status === 'unProcess' || status === 'process' ? '' : 'none'}" data-translation="Order Detail"></h3>
+      <h1 data-bind="style: {display: status === 'reject' || status === 'approve' ? '' : 'none'}" data-translation="Credit Apply Result"></h3>
+      <a class="btn left-btn back" href="#" data-rel="back" data-translation="Back"></a>
+    </div>
+    
+    <div id="iscroll" class="iscroll">
+      <div id="content" class="content">
+        <div id="customerInfo" data-bind="template: {name: 'customer-info-template', data: customerInfo, afterRender: afterRender}"></div>
+        <div id="frozenOrderInfo" data-bind="template: {name: 'frozen-order-info-template', data: orderInfo, afterRender: afterRender}, visible: status === 'unProcessed' || status === 'processing'"></div>
+        <div id="frozenOrderApplyInfo" data-bind="template: {name: 'frozen-order-apply-info-template', data: applicationInfo, afterRender: afterRender}, visible: status === 'reject' || status === 'approve'"></div>   
+        <div id="creditUsageDiagram" data-bind="template: {name: 'diagram-creditUsage-template', data: creditUsageData, afterRender: afterRender}"></div>
+      </div>
+    </div>
+    
+    <div class="footer" style="display: none" data-bind="visible: status === 'unProcessed'">
+      <ul class="action">
+        <li><a class="btn green" data-bind="attr: {href: 'sale-credit-limit-apply-new.html?orderId='+orderInfo.id+'&priority='+orderInfo.priority+'&amount='+orderInfo.amount}" data-translation="Apply" data-transition="slide"></a></li>
+        <li><a class="btn red" href="#" data-bind="click: onRejectApply" data-translation="Reject"></a></li>
+      </ul>
+    </div>
+  </div>
+</div>

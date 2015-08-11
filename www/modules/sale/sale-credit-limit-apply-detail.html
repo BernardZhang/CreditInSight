@@ -1,0 +1,42 @@
+<div data-role="page" id="sale_credit_limit_apply_detail">
+  <div class="common-page">
+    <div class="header">
+      <h1 data-bind="visible: applicationInfo.status !== 'reject' && applicationInfo.status !== 'approve'" data-translation="Apply Detail"></h1>
+      <h1 data-bind="visible: applicationInfo.status === 'reject' || applicationInfo.status === 'approve'" data-translation="Credit Apply Result"></h1>
+      <a class="btn left-btn back" href="#" data-rel="back" data-translation="Back"></a>
+    </div>
+    
+    <div id="iscroll" class="iscroll">
+      <div class="content">
+        <div id="customerInfo" data-bind="template: {name: 'customer-info-template', data: customerInfo, afterRender: afterRender}"></div>
+        <div id="applyInfo" data-bind="template: {name: 'apply-info-template', data: applicationInfo, afterRender: afterRender}"></div>
+       
+        <div id="credit-apply-reason">
+          <h2 data-translation="Apply Reason"></h2>
+            <div class="textarea-box">
+               <textarea class="textarea" data-bind="text: applicationInfo.reason" readonly="readonly"></textarea>
+            </div>
+        </div>
+        
+        <div id="credit-apply-suggestion" data-bind="visible: 'reject' == applicationInfo.status">
+          <h2 data-translation="Apply Process Suggestion"></h2>
+          <div class="textarea-box">
+             <textarea class="textarea" data-bind="text: applicationInfo.processSuggestion, attr: { readonly: applicationInfo.status ? true : false }"></textarea>
+          </div>
+        </div>
+        
+        <div id="creditUsageDiagram" data-bind="template: {name: 'diagram-creditUsage-template', data: creditUsageData, afterRender: afterRender}"></div>
+        <div id="orderRecords" data-bind="template: {name: 'list-order-records-template', data: records, afterRender: afterRender}, visible: (applicationInfo.status !== 'reject' && applicationInfo.status !== 'approve')"></div>
+      </div>
+    </div>
+    <div class="footer" style="display: none" data-bind="visible: $root.status === 'unProcessed'">
+      <ul class="action">
+        <li>
+          <a class="btn green" data-bind="attr: {href: 'sale-credit-limit-apply-page.html?priority='+applicationInfo.priority+'&amount='+applicationInfo.amount+'&used='+creditUsageData.creditUsed+'&creditLimit='+creditUsageData.creditLimit+'&unit='+ applicationInfo.unit}" data-translation="Apply" data-transition="slide"></a>
+        </li>
+        <li>
+          <span><button data-role="none" class="btn red" data-bind="click: onRejectApply" data-translation="Reject"></button></span>
+        </li>
+      </ul>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<ul class="list multiple" data-bind="foreach: $data, visible: $data.length > 0">
+  <li data-bind="style: {'font-weight': ('true' === unread || true === unread) ? 'bold' : 'normal'}">
+    <a class="list-row" data-transition="slide" data-bind="attr: {href: 'credit-limit-approval-detail.html?applicationId=' + id + '&status=' + status}">
+      <span class="list-left">
+        <i data-bind="attr: {class: status}"></i>
+        <em>
+          <sup><span data-bind="text: company"></span></sup>
+          <sub data-bind="text: date"></sub>
+        </em>
+      </span>
+      <span class="list-right one-row">
+        <i class="arrow right"></i>
+        <em>
+          <sup data-bind="attr: {'data-translation': 'Priority ' + priority}, text: priority"></sup>
+        </em>
+      </span>
+    </a>
+  </li>
+</ul>

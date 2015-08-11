@@ -1,0 +1,32 @@
+<h2 data-translation="Apply Info"></h2>
+<ul class="list simple">
+  <li>
+    <span class="list-row">
+      <span class="list-left" data-translation="Apply Date"></span>
+      <span class="list-right" data-bind="text: date"></span>
+    </span>
+  </li>
+  <li>
+    <span class="list-row">
+      <span class="list-left" data-translation="Urgency Degree"></span>
+      <span class="list-right" data-bind="attr: {'data-translation': 'Priority ' +priority}, text: priority"></span>
+    </span>
+  </li>
+  <li data-bind="css: { 'ui-corner-bottom': 'reject' !== status && 'approve' != status}">
+    <span class="list-row">
+      <span class="list-left" data-translation="Current Apply Amount"></span>
+      <span class="list-right">
+        <span data-bind="text: sap.creditManagement.convertNumberWithComma(amount)"></span>
+        <span data-bind="attr: {'data-translation': unit, text: unit}"></span>
+      </span>
+    </span>
+  </li>
+  <li data-bind="style: {display: 'reject' == status || 'approve' == status? '' : 'none'}">
+    <span class="list-row">
+      <span class="list-left" data-translation="Apply Processing Status"></span>
+      <span class="list-right" data-bind="attr: {'data-translation': 'Status '+status}, text: status, style: { color: 'reject' == status ? '#ff0000' : ('approve' == status ? '#008e07' : '#F0AB00')}"></span>
+    </span>
+  </li>
+</ul>
+
+

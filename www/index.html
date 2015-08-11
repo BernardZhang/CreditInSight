@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+<title>Login Page</title>
+<link rel="stylesheet" href="js/lib/jquery.mobile-1.1.1/jquery.mobile-1.1.1.min.css" />
+<link rel="stylesheet" href="css/library.css" />
+
+<script src="js/lib/cordova-2.0.0.js"></script>
+<script src="js/lib/jquery.js"></script>
+<script src="js/lib/jquery.mobile-1.1.1/jquery.mobile-1.1.1.min.js"></script>
+<script src="js/lib/knockout.js"></script>
+<script src="js/lib/koExternalTemplateEngine.js"></script>
+
+<script src="js/custom/common.js"></script>
+<script src="js/custom/db.extend.js"></script>
+<script src="js/custom/PGPlugin.js"></script>
+<script src="js/custom/init.js"></script>
+</head>
+<body>
+  <div data-role="page">
+    <div class="login-page">
+    <div class="header"></div>
+    <h1 data-translation="Credit Management System"></h1>
+    <form class="form">
+      <ul>
+        <li>
+          <label class="input-label" data-translation="User Name"></label>
+          <span class="input-data"><input type="text" class="text" data-role="none" data-bind="value: username" /></span>
+        </li>
+        <li>
+          <label class="input-label" data-translation="Password"></label>
+          <span class="input-data"><input type="password" class="password" data-role="none" data-bind="value: password" /></span>
+        </li>
+        <li class="login-row">
+          <input type="checkbox" data-role="none" class="checkbox" data-bind="checked: isRemember" />
+          <label class="label" data-translation="Remember Me"></label>
+          <span class="btn" data-bind="click: onsubmit" data-transition="slide" data-translation="Login"></span>
+       </li>
+      </ul>
+    </form>
+    <div class="footer"><span><span></div>
+    </div>
+  </div>
+<script src="modules/login/js/login.js"></script>
+</body>
+</html>

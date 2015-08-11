@@ -1,0 +1,21 @@
+<div data-role="page" id="sale_order_product_list">
+  <div class="common-page">
+    <div class="header">
+      <h1 data-translation="Order Line"></h1>
+      <a class="btn left-btn back" data-translation="Back" data-rel="back" href="#"></a>
+    </div>
+    
+    <div id="iscroll" class="iscroll">
+      <div class="content">
+        <div data-bind="template: {name: 'list-product-template', data: productList, afterRender: afterRender}"></div>
+      </div>
+    </div>
+   
+    <div class="footer" style="display: none"  data-bind="visible: status === 'unProcessed'">
+      <ul class="action">
+        <li><a class="btn green" data-transition="slide" data-bind="attr: {href: 'sale-credit-limit-apply-new.html?orderId='+id+'&priority='+priority+'&amount='+amount}" data-translation="Apply"></a></li>
+        <li><a class="btn red" href="#" data-bind="click: onRejectApply" data-translation="Reject"></a></li>
+      </ul>
+    </div>
+  </div>
+</div>

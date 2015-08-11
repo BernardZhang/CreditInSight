@@ -1,0 +1,58 @@
+<div data-role="page" id="manager_reduce_credit_limit">
+  <div class="common-page">
+    <div class="header">
+      <h1 data-translation="Warning Process"></h1>
+      <a class="btn left-btn back" href="#" data-rel="back" data-translation="Back"></a>
+    </div>
+    
+    <div class="iscroll">
+      <div class="content">
+        <h2 data-translation="Adjust Credit Amount"></h2>
+        <div style="background: #ddd; padding: 10px 15px; color: black;">
+          <h4><span data-translation="Customer Name"></span>: <span data-bind="text: creditUsageData.customerName"></span></h4>
+        </div>
+        <div class="progress-bar detail-content credit-usage-diagram" style="padding: 100px 20px 150%"  data-bind="template: {afterRender: afterRender}">
+          <div class="rec-text">
+            <p class="text-right">
+              <span data-translation="Current Credit Limit"></span><span data-translation=":">:</span>
+              <span data-bind="text: sap.creditManagement.convertNumberWithComma(creditUsageData.creditLimit)"></span>
+              <span data-bind="attr: {'data-translation': creditUsageData.unit}, text: creditUsageData.unit"></span>
+            </p>
+          </div>
+          <div class="triangle">
+            <span class="triangle_grey" style="float:right;"></span>
+          </div>
+          <div class="rec-a">
+            <div class="rec-b" data-bind="style: {width: (creditUsageData.creditUsed/creditUsageData.creditLimit * 100) + '%'}"></div>
+          </div>
+          <div class="triangle">
+            <span class="triangle_blue" style="float:left;" data-bind="attr: {style: 'margin-left:'+ parseInt($('.rec-b').width()-10) +'px'}"></span>
+          </div>
+          <div class="text">
+            <span data-bind="text: sap.creditManagement.convertNumberWithComma(creditUsageData.creditLimit)"></span>
+            <span data-bind="attr: {'data-translation': creditUsageData.unit}, text: creditUsageData.unit"></span>
+          </div>
+          <div class="rec-text">
+            <p class="text-left" data-bind="attr: {style: 'margin-left:'+ (($('.rec-b').width() < 120) ? parseInt($('.rec-b').width()) : parseInt($('.rec-b').width() - $('.text-left').width()*1.8)) +'px'}">
+              <span data-translation="Credit Used"></span>：
+              <span data-bind="text: sap.creditManagement.convertNumberWithComma(creditUsageData.creditUsed)"></span>
+              <span data-bind="attr: {'data-translation': creditUsageData.unit}, text: creditUsageData.unit"></span>
+            </p>
+          </div>
+        </div>
+        <!-- Slider to change credit limit -->
+        <div id="changeLimit">
+            <div class="slider-line"></div>
+            <span class="circle"></span>
+            <span class="small-circle"></span>
+          </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <ul class="action">
+        <li><span class="btn green" data-translation="Confirm" data-bind="click: onConfirm"></span></li>
+      </ul>
+    </div>
+  </div>
+</div>

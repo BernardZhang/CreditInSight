@@ -1,0 +1,24 @@
+<h2 data-translation="Customer Info"></h2>
+<ul class="list simple">
+  <li>
+    <span class="list-row">
+      <span class="list-left" data-translation="Customer Name"></span>
+      <span class="list-right" data-bind="text: name"></span>
+    </span>
+  </li>
+  <li>
+    <span class="list-row">
+      <span class="list-left" data-translation="Contact"></span>
+      <span class="list-right" data-bind="text: contactor"></span>
+    </span>
+  </li>
+  <li>
+    <span class="list-row">
+      <span class="list-left" data-translation="Phone Number"></span>
+      <a class="list-right" data-bind="attr: {href: 'tel:' + phone}">
+        <i class="phone"></i>
+        <span data-bind="text: phone"></span>
+      </a>
+    </span>
+  </li>
+</ul>

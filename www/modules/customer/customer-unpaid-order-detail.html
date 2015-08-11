@@ -1,0 +1,15 @@
+<div data-role="page" id="order-detail">
+  <div class="common-page">
+    <div class="header">
+      <a href="#" class="btn left-btn back" data-rel="back" data-translation="Back"></a>
+      <h1 data-translation="Collection Record"></h1>
+    </div>
+    
+    <div id="iscroll" class="iscroll">
+      <div class="content">
+        <div id="credit_check_diagram_order_usage" data-bind="template: {name: 'order-info-template', data: orderInfoData, afterRender: afterRender}"></div>
+        <div id="credit_check_collect_records_list" data-bind="template: {name: 'collect-record-template', data: collectionUsageData, afterRender: afterRender}"></div>
+      </div>
+    </div>
+  </div>
+</div>

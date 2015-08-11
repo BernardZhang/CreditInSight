@@ -1,0 +1,25 @@
+<div data-role="page" id="customer_credit_apply_create">
+  <div class="common-page">
+    <div class="header">
+      <a href="#" data-rel="back" class="btn left-btn back" data-translation="Back"></a>
+      <h1 data-translation="Credit Application"></h1>
+    </div>
+    
+    <div id="iscroll" class="iscroll">
+      <div class="content">
+        <div data-bind="template: {name: 'diagram-creditUsage-template', data: usageDiagramData, afterRender: afterRender}"></div>
+        <div data-bind="template: {name: 'new-credit-apply-template', afterRender: afterRender}"></div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <ul class="action">
+        <li>
+          <span class="btn green" data-bind="click:commitCreditApply, text: sap.creditManagement.translate('Commit')"></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+

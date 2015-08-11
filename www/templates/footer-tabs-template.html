@@ -1,0 +1,11 @@
+<ul class="status">
+  <li data-bind="css: {'active': listTab() === 'unProcessed'}">
+    <span class="unprocessed" data-translation="Unprocessed" data-bind="click: showUnProcessedList"></span>
+  </li>
+  <li data-bind="css: {'active': listTab() === 'processing'}">
+    <span class="processing" data-translation="Processing" data-bind="click: showProcessingList"></span>
+  </li>
+  <li data-bind="css: {'active': listTab() === 'processed'}">
+    <span class="processed" data-translation="Processed" data-bind="click: showProcessedList"></span>
+  </li>
+</ul>

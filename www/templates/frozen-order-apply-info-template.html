@@ -1,0 +1,42 @@
+<h2 data-translation="Apply Info"></h2>
+<ul class="list simple">
+  <li>
+    <span class="list-row">
+      <span class="list-left" data-translation="Apply Date"></span><span class="list-right" data-bind="text: date"></span>
+    </span>
+  </li>
+  <li>
+     <span class="list-row">
+      <span class="list-left" data-translation="Frozen Order Id"></span><span class="list-right" data-bind="text: displayOrderId"></span>
+     </span>
+  </li>
+  <li>
+     <span class="list-row">
+      <span class="list-left" data-translation="Urgency Degree"></span><span class="list-right" data-bind="attr: {'data-translation': 'Priority ' + priority}, text: priority"></span>
+     </span>
+  </li>
+  <li>
+     <span class="list-row">
+      <span class="list-left" data-translation="Current Apply Amount"></span><span class="list-right"><span data-bind="text: $root.creditUsageData.creditRequest"></span> <span data-bind="attr: {'data-translation': unit}"></span></span>
+     </span>
+  </li>
+  <li>
+     <span class="list-row">
+      <span class="list-left" data-translation="Apply Processing Status"></span><span class="list-right" data-bind="attr: {'data-translation': 'Status ' + status}, text: status, style: { color: 'reject' == status ? '#ff0000' : '#008e07'}"></span>
+     </span>
+  </li>
+</ul>
+
+<div id="credit_apply_reason">
+  <h2 data-translation="Apply Reason"></h2>
+  <div class="textarea-box">
+     <textarea class="textarea" data-bind="text: reason" readonly="readonly"></textarea>
+  </div>
+</div>
+ 
+<div id="credit_apply_suggestion">
+  <h2 data-translation="Apply Processing Suggestion"></h2>
+  <div class="textarea-box">
+     <textarea class="textarea" data-bind="text: processSuggestion" readonly="readonly"></textarea>
+  </div>
+</div>

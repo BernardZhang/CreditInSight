@@ -1,0 +1,3 @@
+.ui-page.ui-body-z.ui-page-header-fixed.ui-page-active{
+  padding-top: 88px !important;/*fixed a bug*/
+}

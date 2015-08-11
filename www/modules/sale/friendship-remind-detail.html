@@ -1,0 +1,64 @@
+<div data-role="page" id="friendship_remind_detail">
+  <div class="common-page">
+    <div class="header">
+      <h1 data-translation="Remind Detail"></h1>
+      <a class="btn left-btn back" href="#" data-rel="back" data-translation="Back"></a>
+    </div>
+    
+    <div id="iscroll" class="iscroll">
+      <div class="content">
+        <div data-bind="template: {name: 'warning-customer-info-template', data: basicInfo, afterRender: afterRender}"></div>
+
+        <div id="warning_reason">
+          <h2 data-translation="Warning Reason"></h2>
+          <div class="textarea-box">
+             <textarea class="textarea" data-bind="text: warningReason" readonly="readonly"></textarea>
+          </div>
+        </div>
+        
+        <div id="frozen_process_result" data-bind="visible: processResult.action === 'frozen'">
+          <h2 data-translation="Process Result"></h2>
+          <div class="textarea-box">
+             <textarea class="textarea" data-bind="text: processResult.result" readonly="readonly"></textarea>
+          </div>
+        </div>
+
+        <div id="frozen_process_result" data-bind="visible: processResult.action === 'minus'">
+          <h2 data-translation="Process Result"></h2>
+          <div class="progress-bar detail-content credit-approve-usage-diagram" data-bind="visible: processResult.action === 'minus', template: {afterRender: afterRender}">
+            <div class="rec-text">
+              <p class="text-right">
+                <span data-translation="Current Credit Limit"></span><span data-translation=":">:</span>
+                <span data-bind="text: processResult.result.beforeAdjust"></span>
+                <span data-bind="attr: {'data-translation': processResult.result.unit}, text: processResult.result.unit"></span>
+              </p>
+            </div>
+            <div class="triangle"><span class="triangle_grey" style="float:right;"></span></div>
+            <div class="rec-a">
+              <a href="#" class="rec-b" data-bind="attr: { style: 'width: ' + Math.round(processResult.result.usedLimit/processResult.result.beforeAdjust*100) + '%'}"></a>
+            </div>
+            <div class="triangle"><span class="triangle_blue" style="float:left;"></span></div>
+            <div class="rec-text">
+              <p class="text-left">
+                <span data-translation="Credit Used"></span>:
+                <span data-bind="text: processResult.result.usedLimit"></span><span data-bind="attr: {'data-translation': processResult.result.unit}, text: processResult.result.unit"></span>
+              </p>
+            </div>
+          
+            <div data-bind="attr: {style: 'width: ' + Math.round(processResult.result.afterAdjust/processResult.result.beforeAdjust*100) + '%'}">
+               <div class="rec-text">
+                <p class="text-right">
+                  <span data-translation="Adjusted Total Amount"></span>:
+                  <span data-bind="text: processResult.result.afterAdjust"></span><span data-bind="attr: {'data-translation': processResult.result.unit}, text: processResult.result.unit"></span>
+                </p>
+              </div>
+              <div class="triangle"><span class="triangle_grey" style="float:right;"></span></div>
+              <div class="rec-i"></div>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

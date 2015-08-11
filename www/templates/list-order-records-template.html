@@ -1,0 +1,31 @@
+<h2>
+  <span data-translation="Order Records"></span>
+  <span data-bind="if: $data.total">
+    (<span data-translation="Total Amount">Total Amount</span>: <span data-bind="text: sap.creditManagement.convertNumberWithComma($data.total)"></span><span data-bind="attr: {'data-translation': unit}, text: unit"></span>)
+  </span>
+</h2>
+
+<ul class="list multiple" data-bind="foreach: $data.items, visible: $data.items.length > 0" >
+  <li>
+    <a class="list-row" data-transition="slide" data-bind="attr: {href: 'customer-unpaid-order-detail.html?orderId=' + id}">
+    <span class="list-left">
+      <em>
+        <sup><span data-bind="text: id"></span></sup>
+        <sub><span data-bind="text: date"></span></sub>
+      </em>
+    </span>
+    <span class="list-right">
+      <i class="arrow right"></i>
+      <em>
+        <sup>
+          <span data-translation="Order Amount"></span>: 
+          <span data-bind="text: sap.creditManagement.convertNumberWithComma(amount)"></span>
+          <span data-bind="attr: {'data-translation': unit}, text: unit"></span>
+        </sup>
+        <sub><span data-bind="text: status"></span></sub>
+      </em>
+    </span>
+    </a>
+  </li>
+</ul>
+

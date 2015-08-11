@@ -1,0 +1,45 @@
+<h2 data-translation="Apply Info"></h2>
+<ul class="list simple">
+  <li>
+    <span class="list-row">
+      <span class="list-left"><em><sup><span data-translation="Apply Date"></span></sup></em></span>
+      <span class="list-right"><em><sup><span data-bind="text: date"></span></sup></em></span>
+    </span>
+  </li>
+  <li data-bind="visible: orderInfo.id != ''">
+    <span class="list-row">
+      <span class="list-left"><em><sup><span data-translation="Frozen Order Id"></span></sup></em></span>
+      <span class="list-right"><em><sup><span class="float-a gray-a" data-bind="text: orderInfo.id"></span></sup></em></span>
+    </span>
+  </li>
+  <li>
+    <span class="list-row">
+      <span class="list-left"><em><sup><span data-translation="Urgency Degree"></span></sup></em></span>
+      <span class="list-right"><em><sup><span class="float-a gray-a" data-bind="attr: {'data-translation' : 'Priority '+priority}"></span></sup></em></span>
+    </span>
+  </li>
+  <li>
+    <span class="list-row">
+      <span class="list-left"><em><sup><span data-translation="Current Apply Amount"></span></sup></em></span>
+      <span class="list-right"><em><sup><span class="float-a gray-a"><span data-bind="text: sap.creditManagement.convertNumberWithComma(amount)"></span><span data-bind="attr:{'data-translation':unit}"></span></span></sup></em></span>
+    </span>
+  </li>
+  <li>
+    <span class="list-row">
+      <span class="list-left"><em><sup><span data-translation="Apply Processing Status"></span></sup></em></span>
+      <span class="list-right"><em><sup><span class="float-a gray-a" data-bind="attr: {'data-translation': 'Status '+status}, text: status, style: { color: 'reject' == status ? '#ff0000' : ('process' == status ? '#F0AB00' : '#008e07')}" style="color: rgb(255, 0, 0); "></span></sup></em></span>
+    </span>
+  </li>
+</ul>
+
+<h2 data-translation="Apply Reason"></h2>
+<div class="textarea-box">
+  <textarea class="textarea" name="credit_apply_reason" readonly="readonly" data-bind="text: applyReason"></textarea>
+</div>
+
+<div data-bind="visible: $data.status=='reject'">
+  <h2 data-translation="Apply Reject Reason"></h2>
+  <div class="textarea-box">
+    <textarea class="textarea" name="credit_apply_reason" readonly="readonly" data-bind="text: $data.rejectReason"></textarea>
+  </div>
+</div>

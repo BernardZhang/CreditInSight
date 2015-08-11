@@ -1,0 +1,25 @@
+<div data-role="page" id="credit_limit_approval_list">
+  <div class="common-page">
+    <div class="header">
+      <h1 data-translation="Credit Apply List"></h1>
+      <a class="btn left-btn back" data-ajax="false" href="index.html" data-bind="click: clearTab" data-translation="Back"></a>
+    </div>
+    
+    <div id="iscroll" class="iscroll">
+      <div class="content">
+        <div data-bind="template: {name: 'manager-credit-limit-approval-list-template', data: creditLimitApprovalList, afterRender: afterRender}"></div>
+      </div>
+    </div>
+    
+    <div id="footer" class="footer">
+      <ul class="status">
+        <li data-bind="css: {'active': listTab() == 'unProcessed'}">
+          <span id="footer_tab_unprocessed" class="unprocessed" data-translation="Unprocessed"></span>
+        </li>
+        <li data-bind="css: {'active': listTab() == 'processed'}">
+          <span id="footer_tab_processed" class="processed" data-translation="Processed"></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

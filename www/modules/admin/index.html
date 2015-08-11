@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no" />
+<title>信息管理系统--Admin</title>
+<link rel="stylesheet" href="../../js/lib/jquery.mobile-1.1.1/jquery.mobile-1.1.1.min.css" />
+<link rel="stylesheet" href="../../css/library.css" />
+<script src="../../js/langs/lang.zh-cn.js"></script>
+<script src="../../js/lib/cordova-2.0.0.js"></script>
+<script src="../../js/lib/jquery.js"></script>
+
+<script src="../../js/lib/jquery.mobile-1.1.1/jquery.mobile-1.1.1.min.js"></script>
+<script src="../../js/lib/knockout.js"></script>
+<script src="../../js/lib/koExternalTemplateEngine.js"></script> 
+
+<script src="../../js/custom/common.js"></script>
+<script src="../../js/custom/db.extend.js"></script>
+<script src="../../js/custom/jqm.conf.js"></script>
+<script src="../../js/custom/init.js"></script>
+<script src="../../js/custom/template.js"></script>
+<script src="js/admin.js"></script>
+</head>
+<body>
+<div data-role="page" id="common_homepage" data-theme="z">
+  <div id="header" data-theme="z" data-role="header" data-position="fixed" data-tap-toggle="false" >
+        <h3><span data-translation="Clear cache">缓存清理</span>-<span class="credit-role" data-bind="text: roleName"></span></h3>
+        <a id="btn_logout" data-ajax="false" href="../../index.html" class="ui-btn-right" style="margin-right:10px;"></a>
+  </div>
+  <div data-role="content" class="homepage-content">
+    <div id="home_icon">
+      <ul id="customer">
+          <li id="clear_cache"><a data-transition="slide" href="#"><span></span><p data-translation="Clear Cache">缓存清理</p></a></li>
+          <li><a data-transition="slide" href="test-1.html"><span></span><p data-translation="Clear Cache">TEST - 1</p></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

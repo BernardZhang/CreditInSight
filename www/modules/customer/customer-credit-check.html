@@ -1,0 +1,16 @@
+<div data-role="page" id="customer_credit_check">
+  <div class="common-page">
+    <div class="header">
+      <a href="#" class="btn left-btn back" data-rel="back" data-translation="Back"></a>
+      <h1 data-translation="Credit Check"></h1>
+    </div>
+  
+    <div id="iscroll" class="iscroll">
+      <div class="content">
+        <div id="customer_credit_check_diagram_credit_usage" data-bind="template: {name: 'diagram-creditUsage-template', data: creditUsageData, afterRender: afterRender}"></div>
+    
+        <div id="customer_credit_check_order_records_list" data-bind="template: {name: 'list-order-records-template', data: orderListData, afterRender: afterRender}"></div>
+      </div>
+    </div>
+  </div>
+</div>

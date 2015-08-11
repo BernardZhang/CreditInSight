@@ -1,0 +1,18 @@
+<ul>
+  <li>
+    <h4 style="background: white;" data-translation="Warning Indicator Summary"></h4>
+    <div id="radar_diagram_warning" class="canvas-pos"></div>
+  </li>
+  <!-- ko foreach: $data -->
+  <!-- ko if: !$data.disable -->
+  <li>
+    <h4 style="background: white;" data-bind="text: $data.label"></h4>
+    <div data-bind="attr: {'id': $data.containerId}" class="canvas-pos"></div>
+    <div>
+      <p><span data-translation="Warning Level"></span>: <span data-bind="text: $data.warningLevel"></span></p>
+      <p><span data-translation="Warning Reason"></span>: <span data-bind="text: $data.warningReason"></span></p>
+    </div>
+  </li> 
+  <!-- /ko -->
+  <!-- /ko -->
+</ul>

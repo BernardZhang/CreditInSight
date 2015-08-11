@@ -1,0 +1,27 @@
+<div data-bind="template: {name: 'customer-info-template', data: customerInfo, afterRender: afterRender}"></div>
+<div data-bind="template: {name: 'apply-info-template', data: applicationInfo, afterRender: afterRender}"></div>
+
+<div id="credit_apply_reason">
+  <h2 data-translation="Apply Reason"></h2>
+  <div class="textarea-box">
+     <textarea class="textarea" data-bind="text: applicationInfo.applicationReason" readonly="readonly"></textarea>
+  </div>
+</div>
+
+<div id="credit_apply_seller_suggestion">
+  <h2 data-translation="Apply Process Suggestion"></h2>
+  <div class="textarea-box">
+     <textarea class="textarea" data-bind="text: applicationInfo.sellerSuggestion" readonly="readonly"></textarea>
+  </div>
+</div>
+
+<div data-bind="template:{ name: 'diagram-creditUsage-template', data: creditUsageData, afterRender: afterRender }, visible: applicationInfo.status === 'process'"></div>
+
+<div id="credit_apply_analyst_suggestion">
+  <h2 data-translation="Analyst Suggestion"></h2>
+  <div class="textarea-box">
+     <textarea class="textarea" data-bind="text: applicationInfo.analystSuggestion" readonly="readonly"></textarea>
+  </div>
+</div>
+
+<div data-bind="template:{ name: 'diagram-creditUsage-template', data: creditUsageData, afterRender: afterRender }, visible: applicationInfo.status !== 'process'"></div>

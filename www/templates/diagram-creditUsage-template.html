@@ -1,0 +1,155 @@
+<h2 data-translation="Credit Usage"></h2>
+<div class="progress-bar detail-content credit-usage-diagram" data-bind="visible: diagramType=='usage-diagram'">
+  <div class="rec-text">
+    <p class="text-right">
+      <span data-translation="Current Credit Limit"></span><span data-translation=":">:</span>
+      <span data-bind="text: sap.creditManagement.convertNumberWithComma(creditLimit)"></span>
+      <span data-bind="attr: {'data-translation': unit}, text: unit"></span>
+    </p>
+  </div>
+  <div class="triangle">
+    <span class="triangle_grey" style="float:right;"></span>
+  </div>
+  <div class="rec-a">
+    <div class="rec-b" data-bind="style: {width: (creditUsed/creditLimit * 100) + '%'}"></div>
+  </div>
+  <div class="triangle">
+    <span class="triangle_blue" style="float:left;"></span>
+  </div>
+  <div class="rec-text">
+    <p class="text-left">
+      <span data-translation="Credit Used"></span>:
+      <span data-bind="text: sap.creditManagement.convertNumberWithComma(creditUsed)"></span>
+      <span data-bind="attr: {'data-translation': unit}, text: unit"></span>
+    </p>
+  </div>
+</div>
+
+<div class="progress-bar detail-content credit-approve-usage-diagram" data-bind="visible: diagramType=='approve-usage-diagram'">
+  <div data-bind="attr: {style: 'width: '+Math.round(100*creditLimit/(creditLimit+creditRequest))+'%'}">
+    <div class="rec-text">
+      <p class="text-right">
+        <span data-translation="Current Credit Limit"></span><span data-translation=":">:</span>
+        <span data-bind="text: sap.creditManagement.convertNumberWithComma(creditLimit-creditRequest )"></span>
+        <span data-bind="attr: {'data-translation': unit}, text: unit"></span>
+      </p>
+    </div>
+    <div class="triangle"><span class="triangle_grey" style="float:right;"></span></div>
+    <div class="rec-a"><a href="#" class="rec-b" data-bind="attr: {style: 'width: '+Math.round(100*creditUsed/creditLimit)+'%'}"></a></div>
+    <div class="triangle"><span class="triangle_blue" style="float:left;"></span></div>
+    <div class="rec-text">
+      <p class="text-left">
+        <span data-translation="Credit Used"></span>:
+        <span data-bind="text: sap.creditManagement.convertNumberWithComma(creditUsed)"></span><span data-bind="attr: {'data-translation': unit}, text: unit"></span>
+      </p>
+    </div>
+  </div>
+  <div class="rec-text">
+    <p class="text-right">
+      <span data-translation="Adjusted Total Amount"></span>:
+      <span data-bind="text: sap.creditManagement.convertNumberWithComma(creditLimit)"></span><span data-bind="attr: {'data-translation': unit}, text: unit"></span>
+    </p>
+  </div>
+  <div class="triangle"><span class="triangle_grey" style="float:right;"></span></div>
+  <div class="rec-i"></div>
+</div>
+
+<div class="progress-bar detail-content" data-bind="visible: diagramType=='frozen-usage-diagram' ">
+  <div class="rec-text" data-bind="attr: {style: 'width: '+frozenUsagePercents.bar1+'%'}">
+    <p class="text-left">
+      <span data-translation="Current Credit Limit"></span><span data-translation=":">:</span>
+      <span data-bind="text: sap.creditManagement.convertNumberWithComma(creditLimit)"></span>
+      <span data-bind="attr: {'data-translation': unit}, text: unit"></span>
+    </p>
+    <p class="text-right">
+      <span data-translation="Current Request Amount"></span><span data-translation=":">:</span>
+      <span data-bind="text: sap.creditManagement.convertNumberWithComma(creditRequest)"></span>
+      <span data-bind="attr: {'data-translation': unit}, text: unit"></span>
+    </p>
+  </div>
+  
+  <div class="triangle" data-bind="attr: {style: 'width: '+frozenUsagePercents.bar1+'%'}">
+    <span class="triangle_grey" style="float:left;"></span><span class="triangle_white" style="float:right;"></span>
+  </div>
+  
+  <div class="rec-e" data-bind="attr: {style: 'width: '+frozenUsagePercents.bar1+'%'}">
+    <a href="#" class="rec-f" data-bind="attr: {style: 'width: '+frozenUsagePercents.creditLimit+'%'}"></a>
+  </div>
+  
+  <div class="rec-g" data-bind="attr: {style: 'width: '+frozenUsagePercents.bar2+'%', 'margin-top': '15px'}" >
+    <a class="rec-h" data-bind="attr: {style: 'width: '+frozenUsagePercents.creditUsed+'%'}" href="../customer/customer-credit-info-detail.html?customerId=c_003&amp;handle_status=undo&amp;role=sale&amp;orderId=S1100120020"></a>
+  </div>
+  
+  <div class="triangle" data-bind="attr: {style: 'width: '+frozenUsagePercents.bar2+'%'}">
+    <span class="triangle_blue" style="float:left;"></span>
+    <span class="triangle_yellow" style="float:right;"></span>
+  </div>
+  
+  <div class="rec-text" data-bind="attr: {style: 'width: '+frozenUsagePercents.bar2+'%'}">
+    <p class="text-left">
+      <span data-translation="Credit Used">：</span>:
+      <span data-bind="text: sap.creditManagement.convertNumberWithComma(creditUsed)"></span>
+      <span data-bind="attr: {'data-translation': unit}, text: unit"></span>
+    <p class="text-right">
+      <span data-translation="Order Amount"></span><span data-translation=":">:</span>
+      <span data-bind="text: sap.creditManagement.convertNumberWithComma($data.orderAmount)"></span>
+      <span data-bind="attr: {'data-translation': unit}, text: unit"></span>
+    </p>
+  </div>
+</div>
+
+<div class="progress-bar detail-content" data-bind="visible: diagramType=='approve-frozen-usage-diagram'">
+  <div class="rec-text" data-bind="attr: {style: 'width: '+frozenUsagePercents.bar1+'%'}">
+    <p class="text-left">
+      <span data-translation="Current Credit Limit"></span><span data-translation=":">:</span>
+      <span data-bind="text: sap.creditManagement.convertNumberWithComma(creditLimit)"></span>
+      <span data-bind="attr: {'data-translation': unit}, text: unit"></span>
+    </p>
+    <p class="text-right">
+      <span data-translation="Current Request Amount"></span><span data-translation=":">:</span>
+      <span data-bind="text: sap.creditManagement.convertNumberWithComma(creditRequest)"></span>
+      <span data-bind="attr: {'data-translation': unit}, text: unit"></span>
+    </p>
+  </div>
+  
+  <div class="triangle" data-bind="attr: {style: 'width: '+frozenUsagePercents.bar1+'%'}">
+    <span class="triangle_grey" style="float:left;"></span><span class="triangle_white" style="float:right;"></span>
+  </div>
+  
+  <div class="rec-e" data-bind="attr: {style: 'width: '+frozenUsagePercents.bar1+'%'}">
+    <a href="#" class="rec-f" data-bind="attr: {style: 'width: '+frozenUsagePercents.creditLimit+'%'}"></a>
+  </div>
+  
+  <div class="rec-g" data-bind="attr: {style: 'width: '+frozenUsagePercents.bar2+'%', 'margin-top': '15px'}" >
+    <a class="rec-h" data-bind="attr: {style: 'width: '+frozenUsagePercents.creditUsed+'%'}" href="../customer/customer-credit-info-detail.html?customerId=c_003&amp;handle_status=undo&amp;role=sale&amp;orderId=S1100120020"></a>
+  </div>
+  
+  <div class="triangle" data-bind="attr: {style: 'width: '+frozenUsagePercents.bar2+'%'}">
+    <span class="triangle_blue" style="float:left;"></span>
+    <span class="triangle_yellow" style="float:right;"></span>
+  </div>
+  
+  <div class="rec-text" data-bind="attr: {style: 'width: '+frozenUsagePercents.bar2+'%'}">
+    <p class="text-left">
+      <span data-translation="Credit Used">：</span>:
+      <span data-bind="text: sap.creditManagement.convertNumberWithComma(creditUsed)"></span>
+      <span data-bind="attr: {'data-translation': unit}, text: unit"></span>
+    <p class="text-right">
+      <span data-translation="Order Amount"></span><span data-translation=":">:</span>
+      <span data-bind="text: sap.creditManagement.convertNumberWithComma($data.orderAmount)"></span>
+      <span data-bind="attr: {'data-translation': unit}, text: unit"></span>
+    </p>
+  </div>
+  
+  <div class="rec-text">
+    <p class="text-right">
+      <span data-translation="Adjusted Total Amount"></span>:
+      <span data-bind="text: sap.creditManagement.convertNumberWithComma(creditLimit+creditRequest)"></span><span data-bind="attr: {'data-translation': unit}, text: unit"></span>
+    </p>
+  </div>
+  <div class="triangle">
+      <span class="triangle_grey" style="float:right;"></span>
+  </div>
+  <div class="rec-i"></div>
+  
+</div>

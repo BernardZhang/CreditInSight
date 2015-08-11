@@ -1,0 +1,21 @@
+<ul class="list multiple" data-bind="foreach: $data, visible: $data.length > 0">
+  <li>
+    <a class="list-row" data-transition="slide" data-bind="attr: {href: 'warning-customer-detail.html?customerId='+id+'&startDate='+date+'&endDate='+ endDate}">
+      <span class="list-left">
+        <i data-bind="attr: {class: degree}"></i>
+        <em>
+          <sup><span data-bind="text: name"></span></sup>
+          <sub data-bind="text: date"></sub>
+        </em>
+      </span>
+      <span class="list-right one-row">
+        <i class="arrow right"></i>
+        <em>
+          <sup>
+            <span data-bind="attr: {'data-translation': degree}, text: degree"></span>
+          </sup>
+        </em>
+      </span>
+    </a>
+  </li>
+</ul>
